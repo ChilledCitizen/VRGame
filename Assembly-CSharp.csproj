@@ -55,9 +55,9 @@
      <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoSceneManager.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\HelloVR\Bouncing.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\HelloVR\ButtonThingy.cs" />
+     <Compile Include="Assets\GoogleVR\Demos\Scripts\HelloVR\GameControllerScript.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\HelloVR\HeadsetDemoManager.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\HelloVR\HelloVRManager.cs" />
-     <Compile Include="Assets\GoogleVR\Demos\Scripts\HelloVR\NewBehaviourScript.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\HelloVR\ObjectController.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\KeyboardDemo\KeyboardDelegateExample.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\PermissionsDemo\PermissionsFlowManager.cs" />

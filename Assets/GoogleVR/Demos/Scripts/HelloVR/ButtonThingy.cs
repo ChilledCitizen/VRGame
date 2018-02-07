@@ -10,7 +10,7 @@ public class ButtonThingy : MonoBehaviour
     private float tmpTime;
     public bool isStaring, colorChanged;
     public bool onFire;
-    private ParticleSystem particleSystem;
+    private ParticleSystem ps;
     private ParticleSystem.MinMaxCurve emissionRateOrig;
     private Color colorOrig;
     private float timer;
@@ -26,8 +26,8 @@ public class ButtonThingy : MonoBehaviour
         isStaring = false;
         colorChanged = false;
         tmpTime = timerAmount;
-        particleSystem = GetComponent<ParticleSystem>();
-        var emission = particleSystem.emission;
+        ps = GetComponent<ParticleSystem>();
+        var emission = ps.emission;
         emissionRateOrig = emission.rateOverTime;
         emission.rateOverTime = 0;
         colorOrig = GetComponent<MeshRenderer>().material.color;
@@ -46,21 +46,21 @@ public class ButtonThingy : MonoBehaviour
         isStaring = false;
     }
 
-    public void ChangeColour()
-    {
-        if (!colorChanged)
-        {
-            Debug.Log("Color chnaged");
-            GetComponent<MeshRenderer>().material.color = Color.red;
+    // public void ChangeColour()
+    // {
+    //     if (!colorChanged)
+    //     {
+    //         Debug.Log("Color chnaged");
+    //         GetComponent<MeshRenderer>().material.color = Color.red;
 
-        }
-        else if (colorChanged)
-        {
-            Debug.Log("Color changed to original");
-            GetComponent<MeshRenderer>().material.color = Color.yellow;
+    //     }
+    //     else if (colorChanged)
+    //     {
+    //         Debug.Log("Color changed to original");
+    //         GetComponent<MeshRenderer>().material.color = Color.yellow;
 
-        }
-    }
+    //     }
+    // }
 
     void Update()
     {
@@ -73,7 +73,7 @@ public class ButtonThingy : MonoBehaviour
             timer += Time.deltaTime;
             possibleToWin = false;
 
-            var emission = particleSystem.emission;
+            var emission = ps.emission;
             emission.rateOverTime = timerAmount;
 
 
@@ -98,12 +98,12 @@ public class ButtonThingy : MonoBehaviour
 
 
 
-            var emission = particleSystem.emission;
+            var emission = ps.emission;
             emission.rateOverTime = timerAmount;
 
             if (timerAmount <= 0)
             {
-                emission = particleSystem.emission;
+                emission = ps.emission;
                 emission.rateOverTime = 0;
                 //ChangeColour();
                 //timerAmount = tmpTime;
@@ -127,7 +127,7 @@ public class ButtonThingy : MonoBehaviour
         // {
         //     Debug.Log("Is no longer staring");
         //     timerAmount = tmpTime;
-        //     var emission = particleSystem.emission;
+        //     var emission = ps.emission;
         //     emission.rateOverTime = emissionRateOrig;
         //     //GetComponent<MeshRenderer>().material.color = colorOrig;
 

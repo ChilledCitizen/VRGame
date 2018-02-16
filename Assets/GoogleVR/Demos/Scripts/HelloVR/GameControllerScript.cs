@@ -11,6 +11,7 @@ public class GameControllerScript : MonoBehaviour {
 	private bool win, lose, called;
 	public Image winI, loseI;
 	float tmpWin, tmpLose;
+
 	void Start () {
 		
 		flammableItems = GameObject.FindGameObjectsWithTag("Flammable");
@@ -33,7 +34,7 @@ public class GameControllerScript : MonoBehaviour {
 			timeTilWin -= Time.deltaTime;
 			if(timeTilWin <= 0)
 			{
-				winI.gameObject.SetActive(true);
+				//winI.gameObject.SetActive(true);
 				foreach (var item in flammableItems)
 				{
 					item.SetActive(false);
@@ -42,7 +43,7 @@ public class GameControllerScript : MonoBehaviour {
 		}
 		else if(lose)
 		{
-			timeTilLose -= Time.deltaTime;
+			//timeTilLose -= Time.deltaTime;
 			if(timeTilLose <= 0)
 			{
 				loseI.gameObject.SetActive(true);

@@ -139,7 +139,7 @@ public class ButtonThingy : MonoBehaviour
    IEnumerator calcFire()
     {
         possibleToWin = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         onFire = false;
        
         
